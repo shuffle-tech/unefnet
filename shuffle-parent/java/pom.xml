@@ -5,16 +5,16 @@
 	<artifactId>shuffle-tech-parent-java</artifactId>
 	<name>Shuffle Tech Parent Java</name>
 	<description>Shuffle Tech Parent Java</description>
-    <packaging>pom</packaging>
-    
-    <parent>
+	<packaging>pom</packaging>
+
+	<parent>
 		<artifactId>shuffle-tech-parent</artifactId>
 		<groupId>com.shuffle</groupId>
 		<version>0.0.1-beta</version>
 	</parent>
 
-    <!-- repositories -->
-    
+	<!-- repositories -->
+
 	<repositories>
 		<!-- JBoss Repository used for Java EE 6 pieces -->
 		<repository>
@@ -53,8 +53,8 @@
 			</snapshots>
 		</pluginRepository>
 	</pluginRepositories>
-    
-    <!-- build -->
+
+	<!-- build -->
 
 	<build>
 		<pluginManagement>
@@ -101,6 +101,14 @@
 	<!-- dependencies -->
 
 	<dependencies>
+		<!-- JEE WEB 6 -->
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-web-api</artifactId>
+			<version>6.0</version>
+			<scope>provided</scope>
+		</dependency>
+
 		<!-- Servlet -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -358,27 +366,31 @@
 			<type>jar</type>
 			<scope>compile</scope>
 		</dependency>
-		<!--  Caelum Stella --> 
+		<!-- Caelum Stella -->
 		<dependency>
-		    <groupId>br.com.caelum.stella</groupId>
-		    <artifactId>caelum-stella-core</artifactId>
-		    <version>2.0-beta1</version>
+			<groupId>br.com.caelum.stella</groupId>
+			<artifactId>caelum-stella-core</artifactId>
+			<version>2.0-beta1</version>
 		</dependency>
 		<dependency>
-            <groupId>br.com.caelum.stella</groupId>
-            <artifactId>caelum-stella-boleto</artifactId>
-            <version>2.0-beta1</version>
-        </dependency>                   
-		<dependency>
-		    <groupId>br.com.caelum.stella</groupId>
-		    <artifactId>caelum-stella-hibernate-user-types</artifactId>
-		    <version>2.0-beta1</version>
+			<groupId>br.com.caelum.stella</groupId>
+			<artifactId>caelum-stella-boleto</artifactId>
+			<version>2.0-beta1</version>
 		</dependency>
 		<dependency>
-		    <groupId>br.com.caelum.stella</groupId>
-		    <artifactId>caelum-stella-bean-validation</artifactId>
-		    <version>2.0-beta1</version>
+			<groupId>br.com.caelum.stella</groupId>
+			<artifactId>caelum-stella-hibernate-user-types</artifactId>
+			<version>2.0-beta1</version>
+		</dependency>
+		<dependency>
+			<groupId>br.com.caelum.stella</groupId>
+			<artifactId>caelum-stella-bean-validation</artifactId>
+			<version>2.0-beta1</version>
 		</dependency>
 	</dependencies>
+	<modules>
+		<module>shuffle-tech-resources</module>
+		<module>shuffle-tech-resources</module>
+	</modules>
 
 </project>
