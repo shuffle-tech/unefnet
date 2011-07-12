@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<indexapp:IndexApplication xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:s="library://ns.adobe.com/flex/spark" 
+			   xmlns:mx="library://ns.adobe.com/flex/mx" 
+			   minWidth="955" minHeight="600"
+			   xmlns:indexapp="com.unef.ui.components.application.*"
+			   xmlns:register="com.unef.domain.business.customer.register.*" 
+			   xmlns:institutions="com.unef.domain.business.institutions.*" 
+			   xmlns:shifts="com.unef.domain.business.shifts.*" 
+			   xmlns:course="com.unef.domain.business.course.*" 
+			   xmlns:payment="com.unef.domain.business.payment.*" 
+			   xmlns:dashboard="com.unef.ui.components.dashboard.*" 
+			   xmlns:desktop="com.unef.ui.components.desktop.*" 
+			   xmlns:auth="com.unef.security.auth.*">
+	<fx:Style source="index_1.css"/>
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<!--
+	<desktop:Desktop width="100%" height="100%"/>
+	<auth:LoginAuthentication id="login" width="550" height="250" horizontalCenter="0"
+							  verticalCenter="0"/>
+	-->
+</indexapp:IndexApplication>

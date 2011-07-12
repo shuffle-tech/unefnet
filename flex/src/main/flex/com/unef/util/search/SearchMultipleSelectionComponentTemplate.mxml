@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:TitleWindow xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:s="library://ns.adobe.com/flex/spark" 
+			   xmlns:mx="library://ns.adobe.com/flex/mx" 
+			   width="600" height="350" 
+			   creationPolicy="all"
+			   xmlns:search="com.unef.util.search.*">
+	<s:layout>
+		<s:VerticalLayout/>
+	</s:layout>
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	
+	
+	<s:VGroup width="100%" height="100%">
+		
+		<s:HGroup width="100%" height="30" verticalAlign="middle" horizontalAlign="left">
+			<search:FilterComponent id="filter" />
+		</s:HGroup>
+		<mx:AdvancedDataGrid id="datagrid" width="100%" height="100%" designViewDataType="flat" doubleClickEnabled="true"/>	
+	</s:VGroup>
+	
+	<s:controlBarContent>
+		<s:HGroup width="100%" height="100%" verticalAlign="middle" horizontalAlign="right">
+			<s:Button label="Confirmar" id="conformCommand"/>
+			<s:Button label="Cancelar" id="cancelCommand"/>
+		</s:HGroup>
+	</s:controlBarContent>
+</s:TitleWindow>

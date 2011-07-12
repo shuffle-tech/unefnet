@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" 
+		 width="100%" height="100%" 
+		 xmlns:camera="com.unef.util.camera.*">
+	
+	
+	<fx:Declarations>
+		<s:RadioButtonGroup id="gender"/>
+	</fx:Declarations>
+	
+	<s:layout>
+		<s:VerticalLayout gap="0"/>
+	</s:layout>
+	
+	<s:Label fontSize="18" fontWeight="bold" paddingBottom="5" paddingLeft="10" paddingTop="5"
+			 text="Informções do Responável" verticalAlign="middle"/>
+	<mx:HRule width="100%"/>
+	
+	<mx:LinkBar dataProvider="{stack}" selectedIndex="0"/>
+	
+	<mx:ViewStack width="100%" height="100%" creationPolicy="all" id="stack">
+		<s:NavigatorContent width="100%" height="100%" horizontalCenter="center" id="personal" label="Informações Pessoais">
+			<s:layout>
+				<s:VerticalLayout gap="0" horizontalAlign="left"/>
+			</s:layout>
+			<s:Form width="100%" height="100%">
+				<s:layout>
+					<s:HorizontalLayout gap="0" paddingBottom="0" paddingLeft="0" paddingRight="0" paddingTop="0"/>
+				</s:layout>
+				<s:Form>
+					<s:layout>
+						<s:FormLayout gap="0" horizontalAlign="left" verticalAlign="top"/>					
+					</s:layout>				
+					<s:FormItem width="100%" label="Nome:" required="true">					
+						<s:TextInput id="first_name" width="200"/>				
+					</s:FormItem>
+					<s:FormItem width="100%" label="Sobrenome:">			
+						<s:TextInput id="last_name" width="200"/>				
+					</s:FormItem>
+					<s:FormItem width="100%" label="Sexo:">
+						<s:layout>
+							<s:HorizontalLayout horizontalAlign="center" verticalAlign="middle"/>
+						</s:layout>						
+						<s:RadioButton label="Feminino" groupName="gender" value="F" selected="true"/>
+						<s:RadioButton label="Masculino" groupName="gender" value="M"/>
+					</s:FormItem>
+					<s:FormItem width="100%" label="Data de nascimento:">	
+						<mx:DateField id="birthdate" width="150" yearNavigationEnabled="true"/>
+					</s:FormItem>
+					<s:FormItem width="100%" label="CPF:">
+						<s:helpContent>
+							<s:Label text="Apenas números"/>
+						</s:helpContent>
+						<s:TextInput id="cpf" />
+					</s:FormItem>
+					<s:FormItem width="100%" label="RG:">
+						<s:helpContent>
+							<s:Label text="Apenas números"/>
+						</s:helpContent>
+						<s:TextInput id="rg" />
+					</s:FormItem>
+					<s:FormItem width="100%" label="E-mail:">					
+						<s:TextInput id="email" />
+					</s:FormItem>
+				</s:Form>
+			</s:Form>
+		</s:NavigatorContent>	
+		<s:NavigatorContent width="100%" height="100%" horizontalCenter="center" id="contact" label="Informações de Contato">
+			<s:layout>
+				<s:VerticalLayout gap="0" horizontalAlign="left"/>
+			</s:layout>
+			<s:Form >
+				<s:Form>
+					<s:layout>
+						<s:FormLayout/>
+					</s:layout>
+					<s:FormItem width="100%" label="Telefone:">			
+						<s:layout>
+							<s:HorizontalLayout/>
+						</s:layout>
+						<s:TextInput id="phone_ddd" width="50" maxChars="3"/>
+						<s:TextInput id="phone" width="300"/>
+					</s:FormItem>
+					<s:FormItem width="100%" label="Celular:">
+						<s:layout>
+							<s:HorizontalLayout/>
+						</s:layout>
+						<s:TextInput id="celphone_ddd" width="50" maxChars="3"/>
+						<s:TextInput id="celphone" width="250"/>
+					</s:FormItem>
+					<s:FormItem width="100%" label="Telefone para recado:">			
+						<s:layout>
+							<s:HorizontalLayout/>
+						</s:layout>
+						<s:TextInput id="messages_ddd" width="50" maxChars="3"/>
+						<s:TextInput id="messages" width="250"/>
+					</s:FormItem>
+				</s:Form>
+			</s:Form>	
+		</s:NavigatorContent>	
+		<s:NavigatorContent width="100%" height="100%" horizontalCenter="center" id="address_info" label="Endereço">
+			<s:layout>
+				<s:VerticalLayout gap="0" horizontalAlign="left"/>
+			</s:layout>
+			<s:Form >
+				<s:Form>
+					<s:layout>
+						<s:FormLayout/>
+					</s:layout>
+					
+					<s:FormItem width="100%" label="Rua:">			
+						<s:layout>
+							<s:HorizontalLayout verticalAlign="middle"/>
+						</s:layout>
+						<s:TextInput id="street_name" width="300" />
+						<s:Label text="N°:" fontWeight="bold"/>
+						<s:TextInput id="number" width="50" maxChars="5"/>
+						<s:Label text="CEP°:" fontWeight="bold"/>
+						<s:TextInput id="cep" width="80" maxChars="9"/>
+					</s:FormItem>
+					
+					<s:FormItem width="100%" label="Bairro:">
+						<s:TextInput id="neighborhood" width="250"/>
+					</s:FormItem>
+					
+					<s:FormItem width="100%" label="Cidade:">			
+						<s:TextInput id="city" width="250"/>
+					</s:FormItem>
+				</s:Form>
+			</s:Form>
+		</s:NavigatorContent>	
+	</mx:ViewStack>	
+	
+</s:Group>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<customer:CustomerBasePanel xmlns:fx="http://ns.adobe.com/mxml/2009" 
+							xmlns:s="library://ns.adobe.com/flex/spark" 
+							xmlns:mx="library://ns.adobe.com/flex/mx" 
+							xmlns:customer="com.unef.domain.business.customer.*" 
+							layout="vertical" width="400" height="300">
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<mx:ViewStack width="100%" height="100%">
+		<s:NavigatorContent width="100%" height="100%" horizontalCenter="center" id="list">
+			<s:layout>
+				<s:VerticalLayout gap="0"/>
+			</s:layout>
+			<s:VGroup width="100%" height="100%">
+				<mx:AdvancedDataGrid id="grid" width="100%" height="100%"
+									 dataProvider="{dataProvider}" designViewDataType="flat"
+									 paddingBottom="0" paddingLeft="1" paddingRight="0"
+									 paddingTop="0">
+					<mx:columns>
+						<mx:AdvancedDataGridColumn dataField="active" itemRenderer="mx.controls.CheckBox" headerText="" width="25" textAlign="left"/>
+						<mx:AdvancedDataGridColumn dataField="full_name" headerText="Nome"/>
+						<mx:AdvancedDataGridColumn dataField="cpf" headerText="CPF"/>
+						<mx:AdvancedDataGridColumn dataField="email" headerText="E-mail"/>
+					</mx:columns>
+				</mx:AdvancedDataGrid>			
+				<mx:ControlBar id="control" width="100%" height="30" horizontalAlign="right"
+							   paddingBottom="0" paddingLeft="0" paddingRight="15" paddingTop="0"
+							   verticalAlign="middle">
+					<mx:LinkButton id="add" label="Adicionar" fontWeight="bold" paddingLeft="0" paddingRight="0"
+								   textDecoration="underline"/>
+					<mx:LinkButton id="remove" label="Excluir" paddingLeft="0" paddingRight="0" />
+					<mx:LinkButton label="Rescindir contrato" paddingLeft="0" paddingRight="0" />
+				</mx:ControlBar>
+			</s:VGroup>
+		</s:NavigatorContent>
+		
+	</mx:ViewStack>
+</customer:CustomerBasePanel>

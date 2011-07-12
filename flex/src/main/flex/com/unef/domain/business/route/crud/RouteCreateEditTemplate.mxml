@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panel:PanelComponent xmlns:fx="http://ns.adobe.com/mxml/2009" 
+					  xmlns:s="library://ns.adobe.com/flex/spark" 
+					  xmlns:mx="library://ns.adobe.com/flex/mx" 
+					  xmlns:search="com.unef.domain.business.institutions.search.*"
+					  xmlns:controls="com.flexpernambuco.controls.*" 
+					  xmlns:panel="com.unef.domain.base.ui.panel.*" 
+					  xmlns:renderer="com.unef.domain.business.route.renderer.*" 
+					  width="100%" height="100%">
+	<fx:Declarations>
+		<fx:int id="route_id"/>
+	</fx:Declarations>
+	<s:VGroup width="100%" height="100%">
+		<s:Form width="100%">
+			<s:FormItem label="Description:" width="100%">
+				<s:TextInput id="description" width="250"/>
+			</s:FormItem>		
+			<s:FormItem label="Período:" width="100%">
+				<s:layout>
+					<s:HorizontalLayout/>
+				</s:layout> 
+				<s:RadioButton label="Matutino" groupName="period"/>
+				<s:RadioButton label="Vespertino" groupName="period"/>
+				<s:RadioButton label="Noturno" groupName="period" selected="true"/>
+			</s:FormItem>		
+			<s:FormItem label="Horário de  saída:" width="100%">
+				<controls:MasterTextInput width="80" id="departure_schedule" inputMask="99:99" blankMaskChar=" "/>
+			</s:FormItem>		
+			<s:FormItem label="Horário de retorno:" width="100%">
+				<controls:MasterTextInput width="80" id="return_schedule" inputMask="99:99" blankMaskChar=" "/>
+			</s:FormItem>
+		</s:Form>
+		<s:VGroup width="100%" height="100%" gap="0">
+			<search:InstitutionsSearchButtonComponent id="searchInstitutions" caller="{this}" width="100%" height="30"/>
+			<mx:AdvancedDataGrid id="grid" width="100%" height="100%" designViewDataType="flat" textAlign="left">
+				<mx:columns>
+					<mx:AdvancedDataGridColumn headerText="Instituições" dataField="name"/>
+				</mx:columns>
+			</mx:AdvancedDataGrid>
+		</s:VGroup>
+	</s:VGroup>
+</panel:PanelComponent>
+

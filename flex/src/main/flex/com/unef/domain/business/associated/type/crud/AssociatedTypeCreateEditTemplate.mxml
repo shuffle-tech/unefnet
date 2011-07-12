@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panel:PanelComponent xmlns:fx="http://ns.adobe.com/mxml/2009" 
+					  xmlns:s="library://ns.adobe.com/flex/spark" 
+					  xmlns:mx="library://ns.adobe.com/flex/mx" 
+					  xmlns:panel="com.unef.domain.base.ui.panel.*" 
+					  xmlns:search="com.unef.domain.business.contracts.search.*" 
+					  width="500" height="400" 
+					  >
+	<fx:Declarations>
+		<fx:int id="type_id"/>
+	</fx:Declarations>
+	<s:Form width="100%">
+		<s:FormItem label="Modalidade:">			
+			<s:TextInput id="modality" width="250"/>
+		</s:FormItem>		
+		<s:FormItem label="Valor (R$):">			
+			<s:TextInput id="value" width="50"/>
+		</s:FormItem>		
+		<s:FormItem label="Valor com desconto (R$):">			
+			<s:TextInput id="discount_value" width="50" maxChars="4"/>
+		</s:FormItem>		
+		<s:FormItem label="Contrato:">			
+			<search:ContractSearchInputComponent id="contract" width="100%" caller="{this}"/>			
+		</s:FormItem>		
+	</s:Form>
+	
+</panel:PanelComponent>

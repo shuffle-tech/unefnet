@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu:MenuBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:s="library://ns.adobe.com/flex/spark" 
+			   xmlns:mx="library://ns.adobe.com/flex/mx" 
+			   xmlns:menu="com.unef.ui.components.menu.*" 
+			   borderColor="#CCCCCC" borderStyle="solid" borderVisible="true" cornerRadius="5"
+			   dropShadowVisible="false" buttonMode="true"
+			   width="170" height="210">
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<mx:VBox left="5" right="5" top="5" bottom="5" borderVisible="false"
+			 id="menuList" backgroundColor="#CCCCCC">
+			<mx:LinkButton label="Associados" id="associated" width="100%" textAlign="left"/>
+			<mx:LinkButton label="Boletos" id="billet" width="100%" textAlign="left"/>
+			<!-- 
+				includeInLayout="false" visible="false"/>
+			-->
+			<mx:LinkButton label="Cursos" id="courses" width="100%" textAlign="left"/>
+			<mx:LinkButton label="Linhas" id="routes" width="100%" textAlign="left"/>
+			<mx:LinkButton label="Instituições" id="institutions" width="100%" textAlign="left"/>
+			<mx:LinkButton label="Turnos" id="shifts" width="100%" textAlign="left"/>
+	</mx:VBox>
+</menu:MenuBase>

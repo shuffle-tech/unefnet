@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<associated:AssociatedBasePanel xmlns:fx="http://ns.adobe.com/mxml/2009" 
+								xmlns:s="library://ns.adobe.com/flex/spark" 
+								xmlns:mx="library://ns.adobe.com/flex/mx" 
+								xmlns:associated="com.unef.domain.business.associated.*" 
+								xmlns:crud="com.unef.domain.business.associated.crud.*"
+								layout="absolute" 
+								width="400" height="300">
+	<crud:AssociatedCrudTemplate id="template" left="0" right="0" top="0" bottom="0"/>
+</associated:AssociatedBasePanel>

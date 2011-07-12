@@ -1,0 +1,30 @@
+/* CSS file */
+@namespace s "library://ns.adobe.com/flex/spark";
+@namespace mx "library://ns.adobe.com/flex/mx";
+
+
+.companyLogo{
+	backgroundImage: Embed(source="images/lock-icon.png");
+}
+
+.lock{
+	backgroundImage:  Embed(source="images/lock-icon.png");	
+	background-attachment:fixed;
+}
+
+.welcome{
+	border-style:solid;
+	corner-radius:2;
+	border-weight:1;
+	drop-shadow-visible:visible;
+	
+}
+
+.controlBar{
+	background-color: #AFC9DB;
+}
+
+.closeButton{
+	
+}
+

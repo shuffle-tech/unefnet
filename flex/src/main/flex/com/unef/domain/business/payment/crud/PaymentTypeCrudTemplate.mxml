@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<crud:PaymentTypeCrudBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+					xmlns:s="library://ns.adobe.com/flex/spark" 
+					xmlns:mx="library://ns.adobe.com/flex/mx" 
+					xmlns:crud="com.unef.domain.business.payment.crud.*" 
+					width="400" height="300" xmlns:renderer="com.unef.domain.business.payment.renderer.*" 
+					>
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	
+	<mx:ViewStack width="100%" height="100%" creationPolicy="all" id="stack">
+		<s:NavigatorContent width="100%" height="100%" horizontalCenter="center" id="listPaymentTypes">
+			<s:layout>
+				<s:VerticalLayout gap="0" horizontalAlign="left"/>
+			</s:layout>
+			<s:VGroup width="100%" height="100%">
+				<mx:AdvancedDataGrid id="grid" width="100%" height="100%"
+									 dataProvider="{dataProvider}" designViewDataType="flat"
+									 paddingBottom="0" paddingLeft="1" paddingTop="0">
+					<mx:columns>
+						<mx:AdvancedDataGridColumn itemRenderer="mx.controls.CheckBox" headerText="" width="25" textAlign="left"/>
+						<mx:AdvancedDataGridColumn dataField="description" headerText="Descrição" minWidth="200"/>
+						<mx:AdvancedDataGridColumn headerText="" width="200">
+							<mx:itemRenderer>
+								<fx:Component>
+									<renderer:PaymentTypeGridRenderer/>
+								</fx:Component>
+							</mx:itemRenderer>
+						</mx:AdvancedDataGridColumn>
+					</mx:columns>
+				</mx:AdvancedDataGrid>			
+				<mx:ControlBar id="control" width="100%" height="30" horizontalAlign="right"
+							   paddingBottom="0" paddingLeft="0" paddingRight="15" paddingTop="0"
+							   verticalAlign="middle">
+					<mx:LinkButton id="add" label="Adicionar" fontWeight="bold" paddingLeft="0" paddingRight="0"
+								   textDecoration="underline"/>
+					<mx:LinkButton id="remove" label="Excluir" paddingLeft="0" paddingRight="0" />
+				</mx:ControlBar>
+			</s:VGroup>
+		</s:NavigatorContent>	
+		<s:NavigatorContent width="100%" height="100%" horizontalCenter="center" id="addPaymentType">
+			<s:layout>
+				<s:VerticalLayout gap="0" horizontalAlign="left"/>
+			</s:layout>
+			<crud:PaymentTypeCreateEditTemplate id="create"/>			
+		</s:NavigatorContent>	
+		<s:NavigatorContent width="100%" height="100%" horizontalCenter="center" id="editPaymentType">
+			<s:layout>
+				<s:VerticalLayout gap="0" horizontalAlign="left"/>
+			</s:layout>
+			<crud:PaymentTypeCreateEditTemplate id="edit"/>			
+		</s:NavigatorContent>	
+	</mx:ViewStack>	
+	
+	
+</crud:PaymentTypeCrudBase>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<auth:LoginBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+				xmlns:s="library://ns.adobe.com/flex/spark" 
+				xmlns:mx="library://ns.adobe.com/flex/mx" xmlns:auth="com.unef.security.auth.*" width="420" height="250"
+				creationComplete="fadeIn.play()"
+				creationCompleteEffect="{fadeIn}"
+				backgroundColor="#FFFFFF"
+				horizontalScrollPolicy="off"
+				verticalScrollPolicy="off"
+				>
+	<fx:Declarations>
+		<s:Fade id="fadeIn" alphaFrom="0" alphaTo="1" duration="1500" target="{this}"/>
+	</fx:Declarations>
+	
+	<s:VGroup id="companyLogo" left="10" right="10" top="10" bottom="10" gap="5" paddingBottom="10"
+			  paddingLeft="10" paddingRight="10" paddingTop="10">
+		<s:VGroup width="401" horizontalAlign="center" paddingLeft="10" paddingRight="10">
+			<s:SkinnableContainer width="130" height="105" skinClass="com.unef.security.auth.skin.LockIconSkin" horizontalCenter="0" verticalCenter="0"/>			
+		</s:VGroup>
+		<s:VGroup width="403" paddingLeft="10" paddingRight="10">
+			<mx:Text text="Seja bem-vindo" x="10" y="10" fontSize="20" fontAntiAliasType="advanced" selectable="false"/>
+			<mx:Text text="Identifique-se, por favor, para acessar o sistema." x="12" y="47" selectable="false"/>
+		</s:VGroup>
+		<s:HGroup width="404" height="30" gap="5" horizontalAlign="left" paddingBottom="0"
+				  paddingLeft="10" paddingRight="10" paddingTop="0" verticalAlign="middle">
+			<s:TextInput id="uname" width="150" prompt="Nome de usuário"/>
+			<s:TextInput id="upass" width="150" displayAsPassword="true" prompt="Senha"/>
+			<s:Button id="submitButton" label="Entrar"/>
+		</s:HGroup>
+		<!--
+		<s:HGroup width="100%" height="20" gap="5" horizontalAlign="left" paddingBottom="0"
+				  paddingLeft="10" paddingRight="10" paddingTop="0" verticalAlign="middle">
+			<s:HGroup width="192" height="20" gap="0" horizontalAlign="left" paddingBottom="0"
+					  paddingLeft="0" paddingRight="0" paddingTop="0" verticalAlign="middle">			
+				<s:CheckBox label="Continuar autenticado"/>
+			</s:HGroup>
+			<s:HGroup width="100%" height="20" gap="0" horizontalAlign="left" paddingBottom="0"
+					  paddingLeft="0" paddingRight="0" paddingTop="0" verticalAlign="middle">			
+				<mx:LinkButton label="Esqueceu a senha?"/>
+			</s:HGroup>
+		</s:HGroup>
+		-->
+	</s:VGroup>
+	
+</auth:LoginBase>

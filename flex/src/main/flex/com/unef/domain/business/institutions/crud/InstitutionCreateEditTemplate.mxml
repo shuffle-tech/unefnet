@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panel:PanelComponent xmlns:fx="http://ns.adobe.com/mxml/2009" 
+					  xmlns:s="library://ns.adobe.com/flex/spark" 
+					  xmlns:mx="library://ns.adobe.com/flex/mx" 
+					  xmlns:panel="com.unef.domain.base.ui.panel.*" 
+					  width="100%" height="100%">
+	
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+		<fx:int id="institution_id" />
+		<fx:int id="address_id" />
+		<fx:int id="phone_id" />
+	</fx:Declarations>
+	<s:Form width="100%" height="100%">
+		<s:layout>
+			<s:FormLayout gap="0" horizontalAlign="left" verticalAlign="top"/>					
+		</s:layout>				
+		<s:FormItem width="100%" label="Nome:" required="true">					
+			<s:TextInput id="full_name" width="300"/>				
+		</s:FormItem>
+		<s:FormItem width="100%" label="Telefone:">
+			<s:layout>
+				<s:HorizontalLayout horizontalAlign="left" verticalAlign="middle"/>
+			</s:layout>
+			<s:TextInput id="ddd" widthInChars="3"/>				
+			<s:TextInput id="phone" widthInChars="9"/>				
+		</s:FormItem>			
+		<s:FormItem width="100%" label="Web site:">			
+			<s:TextInput id="web_site" width="300"/>				
+		</s:FormItem>			
+		<s:FormItem width="100%" label="Rua:">
+			<s:layout>
+				<s:HorizontalLayout horizontalAlign="left" verticalAlign="middle"/>
+			</s:layout>
+			<s:TextInput id="street_name" width="200"/>
+			<s:Label text="N°" fontWeight="bold"/>
+			<s:TextInput id="number" widthInChars="5"/>
+		</s:FormItem>			
+		<s:FormItem width="100%" label="CEP:">					
+			<s:TextInput id="zip_code" widthInChars="9"/>
+		</s:FormItem>
+		<s:FormItem width="100%" label="Bairro:">				
+			<s:TextInput id="neighborhood" width="200" />
+		</s:FormItem>
+		<s:FormItem width="100%" label="Cidade:">				
+			<s:TextInput id="city" width="200"/>
+		</s:FormItem>
+	</s:Form>		
+</panel:PanelComponent>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dashboard:DashboardBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+						 xmlns:s="library://ns.adobe.com/flex/spark" 
+						 xmlns:mx="library://ns.adobe.com/flex/mx" 
+						 xmlns:dashboard="com.unef.ui.components.dashboard.*" 
+						 xmlns:container="com.datasul.ui.framework.container.*" 
+						 xmlns:course="com.unef.domain.business.course.*" 
+						 xmlns:payment="com.unef.domain.business.payment.*"
+						 xmlns:institutions="com.unef.domain.business.institutions.*" 
+						 xmlns:shifts="com.unef.domain.business.shifts.*" 
+						 xmlns:busstop="com.unef.domain.business.route.busstop.*" 
+						 xmlns:contracts="com.unef.domain.business.contracts.*" 
+						 xmlns:type="com.unef.domain.business.associated.type.*" 
+						 xmlns:route="com.unef.domain.business.route.*"
+						 xmlns:associated="com.unef.domain.business.associated.*" 
+						 width="100%" height="100%" 
+						 label="Home">
+	<fx:Declarations>
+		
+	</fx:Declarations>
+	
+	<mx:VBox width="100%" height="100%" label="Home">
+		<container:SuperPanelContainer id="container" width="100%" height="100%" >
+			<!--
+			<associated:AssociatedPanel id="associatedPanel" width="680" height="400"/>
+			<register:CustomerForm id="customerForm" width="500" height="500"/>
+			<shifts:ShiftPanel id="shiftPanel" width="500" height="400"/>
+			<institutions:InstitutionPanel id="institutionPanel" width="500" height="400"/>
+			<course:CoursePanel id="coursePanel" width="500" height="400"/>
+			<payment:PaymentTypePanel id="paymentPanel" width="500" height="400"/>
+			<type:AssociatedTypePanel id="associatedTypePanel" width="500" height="400"/>
+			<route:RoutePanel id="routePanel" width="500" height="400"/>
+			<busstop:BusStopPanel id="busstopPanel" width="500" height="400"/>
+			<contracts:ContractPanel id="contractPanel" width="500" height="400"/>
+			-->
+			<!--
+			-->
+		</container:SuperPanelContainer>
+	</mx:VBox>
+	
+</dashboard:DashboardBase>

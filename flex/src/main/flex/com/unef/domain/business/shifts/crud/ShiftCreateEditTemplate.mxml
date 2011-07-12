@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panel:PanelComponent xmlns:fx="http://ns.adobe.com/mxml/2009" 
+					  xmlns:s="library://ns.adobe.com/flex/spark" 
+					  xmlns:mx="library://ns.adobe.com/flex/mx" 
+					  xmlns:panel="com.unef.domain.base.ui.panel.*" 
+					  width="100%" height="100%">
+	<fx:Declarations>
+		<fx:int id="shift_id"/>
+	</fx:Declarations>
+	
+	<s:Form width="100%">
+		<s:FormItem label="Descrição:">			
+			<s:TextInput id="description"/>
+		</s:FormItem>		
+	</s:Form>
+</panel:PanelComponent>

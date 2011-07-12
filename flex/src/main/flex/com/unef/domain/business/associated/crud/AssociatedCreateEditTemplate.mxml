@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panel:PanelComponent xmlns:fx="http://ns.adobe.com/mxml/2009" 
+					  xmlns:s="library://ns.adobe.com/flex/spark" 
+					  xmlns:mx="library://ns.adobe.com/flex/mx" 
+					  xmlns:panel="com.unef.domain.base.ui.panel.*" 
+					  xmlns:crud="com.unef.domain.business.associated.crud.*"
+					  width="100%" height="100%" 
+					  xmlns:courses="com.unef.domain.business.associated.course.crud.*" 
+					  >
+	<fx:Declarations>
+		<fx:int id="item_id"/>
+	</fx:Declarations>	
+
+	<mx:ViewStack width="100%" height="100%" creationPolicy="all" id="stack">
+		<s:NavigatorContent width="100%" height="100%" horizontalCenter="center" id="addAssociated">
+			<s:layout>
+				<s:VerticalLayout gap="0" horizontalAlign="left"/>
+			</s:layout>
+			<crud:AssociatedFormTemplate id="associatedForm" width="100%" height="100%"/>
+		</s:NavigatorContent>
+		<s:NavigatorContent width="100%" height="100%" horizontalCenter="center" id="addAssociatedCourse">
+			<s:layout>
+				<s:VerticalLayout gap="0" horizontalAlign="left"/>
+			</s:layout>
+			<courses:AssociatedCourseCrudTemplate id="associatedCourseForm" width="100%" height="100%"/>
+		</s:NavigatorContent>	
+		<s:NavigatorContent width="100%" height="100%" horizontalCenter="center" id="addResponsible">
+			<s:layout>
+				<s:VerticalLayout gap="0" horizontalAlign="left"/>
+			</s:layout>
+			<crud:ResponsibleFormTemplate id="responsibleForm" width="100%" height="100%"/>			
+		</s:NavigatorContent>	
+	</mx:ViewStack>
+	<panel:controlBarContent>
+			<s:HGroup width="100%" height="100%" verticalAlign="middle" horizontalAlign="right">
+				<s:Button label="Salvar" id="saveCommand" fontWeight="bold"/>
+				<s:Button label="Anterior" id="prevCommand" fontWeight="bold" enabled="{stack.selectedChild != addAssociated}"/>
+				<s:Button label="Proximo" id="nextCommand" fontWeight="bold" enabled="{stack.selectedChild != addResponsible}"/>
+				<s:Button label="Cancelar" id="cancelCommand"/>
+			</s:HGroup>
+	</panel:controlBarContent>
+</panel:PanelComponent>

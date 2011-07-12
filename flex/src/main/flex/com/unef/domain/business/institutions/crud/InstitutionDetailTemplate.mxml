@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:VGroup xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		  xmlns:s="library://ns.adobe.com/flex/spark" 
+		  xmlns:mx="library://ns.adobe.com/flex/mx" width="100%" height="100%" 
+		  xmlns:institutions="com.unef.domain.business.institutions.*">
+	<fx:Declarations>
+		<institutions:Institution id="model"/>
+	</fx:Declarations>
+	
+	<s:Form width="100%" height="100%">
+		<s:layout>
+			<s:FormLayout gap="0" horizontalAlign="left" verticalAlign="top"/>					
+		</s:layout>				
+		<s:FormItem width="100%" label="Nome:">			
+			<s:Label id="full_name" text="{model.name}" width="300"/>				
+		</s:FormItem>
+		<s:FormItem width="100%" label="Telefone:">
+			<s:layout>
+				<s:HorizontalLayout horizontalAlign="left" verticalAlign="middle"/>
+			</s:layout>
+			<s:Label id="phone" text="{model.formatted_phone}" width="100"/>				
+		</s:FormItem>			
+		<s:FormItem width="100%" label="Web site:">			
+			<s:Label id="web_site" text="{model.web_site}" width="300"/>				
+		</s:FormItem>			
+		<s:FormItem width="100%" label="Rua:">
+			<s:layout>
+				<s:HorizontalLayout horizontalAlign="left" verticalAlign="middle"/>
+			</s:layout>
+			<s:Label id="street_name" text="{model.full_street_name}" width="200"/>						
+		</s:FormItem>			
+		<s:FormItem width="100%" label="CEP:">					
+			<s:Label id="zip_code" text="{model.formatted_zip_code}" width="100"/>
+		</s:FormItem>
+		<s:FormItem width="100%" label="Bairro:">				
+			<s:Label id="neighborhood" text="{model.neighborhood}" width="200" />
+		</s:FormItem>
+		<s:FormItem width="100%" label="Cidade:">				
+			<s:Label id="city" text="{model.city}" width="200"/>
+		</s:FormItem>
+		<mx:ControlBar width="100%" height="25" horizontalAlign="right"
+					   paddingBottom="0" paddingLeft="0" paddingRight="15" paddingTop="0"
+					   verticalAlign="middle">
+			<mx:LinkButton id="backCommand" label="Voltar" fontWeight="bold" paddingLeft="0" paddingRight="0"
+						   textDecoration="underline"/>			
+		</mx:ControlBar>	
+	</s:Form>		
+	
+	
+</s:VGroup>

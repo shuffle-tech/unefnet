@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<register:CustomerFormBase xmlns:fx="http://ns.adobe.com/mxml/2009"
+						   xmlns:s="library://ns.adobe.com/flex/spark"
+						   xmlns:mx="library://ns.adobe.com/flex/mx"
+						   xmlns:forms="com.unef.domain.business.customer.register.forms.*"
+						   xmlns:register="com.unef.domain.business.customer.register.*"
+						   xmlns:camera="com.unef.util.camera.*"
+						   xmlns:component="com.unef.util.search.component.*"
+						   width="100%" height="100%" currentState="addCourse" xmlns:search="com.unef.domain.business.institutions.search.*">
+	
+	<register:states>
+		<s:State name="associated"/>
+		<s:State name="responsible"/>
+		<s:State name="addCourse"/>
+	</register:states>
+	
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	
+	<s:VGroup width="100%" height="100%" includeIn="associated" id="associatedGroup">
+		<mx:LinkBar width="100%" dataProvider="{associatedStack}" dropShadowVisible="false" horizontalAlign="center"
+					selectedIndex="0" verticalAlign="middle"/>
+		<mx:ViewStack width="100%" height="100%" creationPolicy="all" id="associatedStack">
+			<s:NavigatorContent width="100%" height="100%" horizontalCenter="center" id="personal" label="Informações Pessoais">
+				<s:layout>
+					<s:VerticalLayout gap="0" horizontalAlign="left"/>
+				</s:layout>
+				<s:HGroup width="100%" height="100%">
+					<forms:PersonalDataForm id="associated"/>
+					<camera:ImageCaptureContainer id="imageCapture" width="150" height="200"/>
+				</s:HGroup>
+			</s:NavigatorContent>	
+			<s:NavigatorContent width="100%" height="100%" horizontalCenter="center" id="associatedContact" label="Informações de contato">
+				<s:layout>
+					<s:VerticalLayout gap="0" horizontalAlign="left"/>
+				</s:layout>
+				<forms:ContactForm id="associatedContactData"/>
+			</s:NavigatorContent>
+			<s:NavigatorContent width="100%" height="100%" horizontalCenter="center" id="associatedAddress" label="Endereço">
+				<s:layout>
+					<s:VerticalLayout gap="0" horizontalAlign="left"/>
+				</s:layout>
+				<forms:AddressForm id="associatedAddressData"/>
+			</s:NavigatorContent>	
+		</mx:ViewStack>
+	</s:VGroup>
+	
+	<s:VGroup width="100%" height="100%" includeIn="addCourse" id="addCourseGroup">
+		<forms:CourseForm id="associatedCourses">
+			<s:FormItem width="300" label="Institição:">
+				<search:InstitutionsSearchInputComponent id="institutions" caller="{this}"/> 				
+			</s:FormItem>
+		</forms:CourseForm>
+	</s:VGroup>
+	
+	<s:VGroup width="100%" height="100%" includeIn="responsible" id="responsibleGroup">
+		<mx:LinkBar width="100%" dataProvider="{responsibleStack}" dropShadowVisible="false" horizontalAlign="center"
+					selectedIndex="0" verticalAlign="middle"/>
+		<mx:ViewStack width="100%" height="100%" creationPolicy="all" id="responsibleStack">
+			<s:NavigatorContent width="100%" height="100%" horizontalCenter="center" id="responsible" label="Informações Pessoais">
+				<s:layout>
+					<s:VerticalLayout gap="0" horizontalAlign="left"/>
+				</s:layout>
+				<s:HGroup width="100%" height="100%">
+					<forms:PersonalDataForm id="responsiblePersonalData"/>					
+				</s:HGroup>
+			</s:NavigatorContent>	
+			<s:NavigatorContent width="100%" height="100%" horizontalCenter="center" id="responsibleContact" label="Informações de contato">
+				<s:layout>
+					<s:VerticalLayout gap="0" horizontalAlign="left"/>
+				</s:layout>
+				<forms:ContactForm id="responsibleContactData"/>
+			</s:NavigatorContent>
+			<s:NavigatorContent width="100%" height="100%" horizontalCenter="center" id="responsibleAddress" label="Endereço">
+				<s:layout>
+					<s:VerticalLayout gap="0" horizontalAlign="left"/>
+				</s:layout>
+				<forms:AddressForm id="responsibleAddressData"/>
+			</s:NavigatorContent>	
+		</mx:ViewStack>
+	</s:VGroup>
+	
+	
+	<mx:ControlBar verticalAlign="middle" horizontalAlign="right" width="100%">		
+		<s:Button label="Cancelar" id="cancel" />
+		<s:Button id="backward" label="Voltar"				  
+				  visible.associated="false"
+				  includeInLayout.associated="false"
+				  />
+		<s:Button label="Avançar" id="forward"
+				  visible.responsible="false"
+				  includeInLayout.responsible="false"				  
+				  />
+		<s:Button label="Save" id="saveCommand"/>
+	</mx:ControlBar>
+	
+</register:CustomerFormBase>

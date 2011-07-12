@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<crud:RouteCrudBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+					xmlns:s="library://ns.adobe.com/flex/spark" 
+					xmlns:mx="library://ns.adobe.com/flex/mx" 
+					xmlns:crud="com.unef.domain.business.route.crud.*" 
+					xmlns:renderer="com.unef.domain.business.route.renderer.*" 
+					width="400" height="300" 
+					>
+	<fx:Declarations>
+		
+	</fx:Declarations>
+	
+	<mx:ViewStack width="100%" height="100%" creationPolicy="all" id="stack">
+		<s:NavigatorContent width="100%" height="100%" horizontalCenter="center" id="listRegister">
+			<s:layout>
+				<s:VerticalLayout gap="0" horizontalAlign="left"/>
+			</s:layout>
+			<s:Panel creationPolicy="all" width="100%" height="100%" skinClass="com.unef.ui.skin.PanelSkin">
+				<mx:AdvancedDataGrid id="grid" width="100%" height="100%"
+									 dataProvider="{dataProvider}" designViewDataType="flat"
+									 paddingBottom="0" paddingLeft="1" paddingTop="0">
+					<mx:columns>						
+						<mx:AdvancedDataGridColumn dataField="description" headerText="Descrição" minWidth="180"/>
+						<mx:AdvancedDataGridColumn dataField="period" headerText="Periodo" minWidth="80" labelFunction="{period}"/>
+						<mx:AdvancedDataGridColumn dataField="departure_schedule" headerText="Saída" width="80" labelFunction="{departure_schedule}"/>
+						<mx:AdvancedDataGridColumn dataField="return_schedule" headerText="Retorno" width="80" labelFunction="{return_schedule}"/>
+						<mx:AdvancedDataGridColumn headerText="" width="100">
+							<mx:itemRenderer>
+								<fx:Component>
+									<renderer:RouteGridRenderer />
+								</fx:Component>
+							</mx:itemRenderer>
+						</mx:AdvancedDataGridColumn>
+					</mx:columns>
+				</mx:AdvancedDataGrid>			
+				<s:controlBarContent>
+					<s:HGroup width="100%" height="100%" verticalAlign="middle" horizontalAlign="right">
+						<s:Button id="add" label="Adicionar" fontWeight="bold"/>
+						<!--
+						<s:Button id="remove" label="Excluir"  />
+						-->
+					</s:HGroup>
+				</s:controlBarContent>
+				</s:Panel>
+		</s:NavigatorContent>	
+		<s:NavigatorContent width="100%" height="100%" horizontalCenter="center" id="addRegister">
+			<s:layout>
+				<s:VerticalLayout gap="0" horizontalAlign="left"/>
+			</s:layout>
+			<crud:RouteCreateEditTemplate id="create"/>			
+		</s:NavigatorContent>	
+		<s:NavigatorContent width="100%" height="100%" horizontalCenter="center" id="editRegister">
+			<s:layout>
+				<s:VerticalLayout gap="0" horizontalAlign="left"/>
+			</s:layout>
+			<crud:RouteCreateEditTemplate id="edit"/>			
+		</s:NavigatorContent>	
+	</mx:ViewStack>	
+	
+</crud:RouteCrudBase>

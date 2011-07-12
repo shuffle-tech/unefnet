@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panel:PanelComponent xmlns:fx="http://ns.adobe.com/mxml/2009" 
+					  xmlns:s="library://ns.adobe.com/flex/spark" 
+					  xmlns:mx="library://ns.adobe.com/flex/mx" 
+					  xmlns:panel="com.unef.domain.base.ui.panel.*" 
+					  width="100%" height="100%"
+					  xmlns:search="com.unef.domain.business.associated.search.*" xmlns:search1="com.unef.domain.business.course.search.*" xmlns:controls="com.flexpernambuco.controls.*">
+	<s:Form width="100%" height="100%">
+		<s:FormItem label="Associado:">			
+			<search:AssociatedSearchInputComponent id="associatedSearch" width="100%" caller="{this}"/>
+		</s:FormItem>		
+		<s:FormItem label="Curso:">			
+			<search1:CourseSearchInputComponent id="courseSearch" width="100%" caller="{this}"/>
+		</s:FormItem>		
+		<s:FormItem label="Data de vencimento:">			
+			<mx:DateField id="expireDate" width="100" formatString="DD/MM/YYYY" disabledDays="{[0,6]}"/>
+		</s:FormItem>		
+		<s:FormItem label="Valor:">
+			<controls:MasterTextInput width="80" id="billet_value" maxChars="5"/>
+		</s:FormItem>		
+		<s:FormItem label="Valor com desconto:">			
+			<controls:MasterTextInput width="80" id="value_with_discount" maxChars="5"/>
+		</s:FormItem>		
+	</s:Form>
+	
+	<panel:controlBarContent>
+			<s:HGroup width="100%" height="100%" verticalAlign="middle" horizontalAlign="right">
+				<s:Button label="Gerar boleto" id="generateBilletCommand" fontWeight="bold"/>
+				<s:Button label="Cancelar" id="cancelCommand"/>
+			</s:HGroup>
+	</panel:controlBarContent>
+</panel:PanelComponent>

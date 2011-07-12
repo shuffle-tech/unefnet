@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<base:DesktopBase xmlns:fx="http://ns.adobe.com/mxml/2009" 
+				  xmlns:s="library://ns.adobe.com/flex/spark" 
+				  xmlns:mx="library://ns.adobe.com/flex/mx" 
+				  xmlns:base="com.unef.ui.components.desktop.*" 
+				  xmlns:code="http://code.google.com/p/flexlib/" 
+				  xmlns:panel="nl.wv.extenders.panel.*"
+				  xmlns:dashboard="com.unef.ui.components.dashboard.*"
+				  width="100%" height="100%" 
+				  creationPolicy="all" xmlns:auth="com.unef.security.auth.*" xmlns:sidemenu="com.unef.ui.components.menu.*">
+	<fx:Declarations>
+	</fx:Declarations>
+	<mx:VBox width="100%" height="100%" label="Home">
+		<mx:HBox width="100%" height="100%">
+			<sidemenu:Menu id="menulist"/>
+			<dashboard:Dashboard id="dashboard" width="100%" height="100%"/>
+		</mx:HBox>
+		<mx:ControlBar verticalAlign="middle" horizontalAlign="right" width="100%" height="45">
+			<mx:Canvas width="100%" height="100%" backgroundColor="#CCCCCC"  backgroundAlpha="0.4">
+				<mx:HBox width="100%" height="100%" verticalAlign="middle" horizontalAlign="right">
+					<mx:LinkButton id="logout" label="Sair" textDecoration="underline" fontWeight="bold"/>
+					<mx:LinkButton id="organize" label="Organizar"/>
+				</mx:HBox>
+			</mx:Canvas>
+		</mx:ControlBar>
+	</mx:VBox>
+</base:DesktopBase>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<camera:ImageCaptureContainer xmlns:fx="http://ns.adobe.com/mxml/2009" 
+							  xmlns:s="library://ns.adobe.com/flex/spark" 
+							  xmlns:mx="library://ns.adobe.com/flex/mx" 
+							  xmlns:camera="com.unef.util.camera.*" 
+							  width="150" height="200">
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<camera:ImageCapture id="image" width="100%" height="100%"/>
+	<mx:LinkButton label="Salvar" id="saveCommand"/>
+	<mx:LinkButton label="Upload de imagem" id="UploadImageCommand"/>
+</camera:ImageCaptureContainer>
